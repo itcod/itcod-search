@@ -1,16 +1,45 @@
 # itcod-search
-SOA ITCOD. SEARCH module for Nginx.
+
 
 SOA ITCOD
 
 Сервис "search" 
+SEARCH module for Nginx.
 
+-- Copyright (c) 2015 by Yura Vdovytchenko (max@itcod.com)
+
+-- Copyright (c)itcod 2010-2015
 
 Назначение: Обеспечить поиск отбор в закрытых пользовательских массивах и выполнение простейших статистических операций с формированием результатов. Операции выполняются над пользовательскими массивами к которым владелец разрешил доступ сервису "search".
 
 Массив это группа любых файлов в определённой папке. Доступ разрешается наличием в папке файла .htsearch 
 
+
 c строками разрешённых действий (пример: all:all - разрешен доступ ко всем файлам и любой метод обработки полученных данных)
+
+
+path lua file: /etc/nginx/lua/itcod-search.lua
+path for access for service search .htsearch (trivial string: all:all)
+
+Example Nginx virtual example.conf
+
+local example = {
+  _NGINX = [[
+
+server {
+    #...
+
+    location / {
+	#...
+    }
+
+    location /search/ {
+	content_by_lua_file /etc/nginx/lua/itcod-search.lua;
+    }
+}
+  ]]
+}
+
 
 
 
