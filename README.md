@@ -6,9 +6,9 @@ SOA ITCOD
 Сервис "search" 
 SEARCH module for Nginx.
 
--- Copyright (c) 2015 by Yura Vdovytchenko (max@itcod.com)
+Copyright (c) 2015 by Yura Vdovytchenko (max@itcod.com)
 
--- Copyright (c)itcod 2010-2015
+Copyright (c)itcod 2010-2015
 
 Назначение: Обеспечить поиск отбор в закрытых пользовательских массивах и выполнение простейших статистических операций с формированием результатов. Операции выполняются над пользовательскими массивами к которым владелец разрешил доступ сервису "search".
 
